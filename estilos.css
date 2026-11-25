@@ -1,0 +1,167 @@
+:root {
+  color-scheme: dark;
+  --ink: #071422;
+  --paper: #f8f1e7;
+  --gold: #e5c18b;
+  --muted: #d1d7dc;
+  --line: #d4c5ab42;
+  --edge: clamp(1.25rem, 6vw, 6.5rem);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: var(--ink);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 280px; background: var(--ink); }
+button, input { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid #fff2d6; outline-offset: 4px; }
+
+.letter {
+  --rose-base: #c5274d;
+  --rose-mid: #e64265;
+  --rose-shadow: #630d2c;
+  --rose-light: #fb7b91;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  color: var(--paper);
+}
+
+.letter[data-rose='blancas'] { --rose-base: #eadfca; --rose-mid: #d6c2a6; --rose-shadow: #90765c; --rose-light: #fffaf0; }
+.letter[data-rose='rosas'] { --rose-base: #dc7393; --rose-mid: #ef88a8; --rose-shadow: #873651; --rose-light: #ffc0d0; }
+
+.river-cover, .veil, .petals { position: absolute; inset: 0; pointer-events: none; }
+.river-cover { z-index: -3; background: #081423 url('rio-nocturno.png') center / cover no-repeat; transform: scale(1.02); }
+.veil { z-index: -2; background: linear-gradient(90deg, #04101ddd 0%, #071422b8 35%, #07142232 67%, #020a13bb 100%), linear-gradient(180deg, #06101e8f, transparent 41%, #040a14b5 100%); }
+
+.shell { width: min(calc(100% - var(--edge) - var(--edge)), 82rem); margin-inline: auto; }
+.topbar { display: flex; align-items: center; min-height: 5.65rem; border-bottom: 1px solid var(--line); }
+.mark { display: inline-flex; align-items: center; gap: .7rem; color: inherit; font: 1.15rem/1 Georgia, serif; text-decoration: none; }
+.mark-flower { display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border: 1px solid #e5c18b86; border-radius: 50%; color: var(--gold); font: 1rem/1 system-ui, sans-serif; }
+
+.quiet-button, .footer-action { border: 0; padding: .5rem 0; color: var(--paper); background: transparent; font-size: .9rem; }
+.quiet-button::after, .footer-action::after { display: block; height: 1px; margin-top: .32rem; background: currentColor; content: ''; transform: scaleX(.58); transform-origin: left; transition: transform 180ms ease; }
+.quiet-button:hover::after, .footer-action:hover::after { transform: scaleX(1); }
+
+.hero { display: grid; grid-template-columns: minmax(17rem, .9fr) minmax(21rem, 1.1fr); align-items: center; min-height: 0; gap: clamp(1.5rem, 6vw, 8rem); padding-block: clamp(2rem, 5vh, 4.5rem); }
+.letter-copy { max-width: 33rem; padding-block: 1rem; }
+.eyebrow { display: flex; align-items: center; gap: .7rem; margin: 0 0 1.2rem; color: var(--gold); font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.eyebrow::before { width: 1.7rem; height: 1px; background: currentColor; content: ''; }
+h1, h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+h1 { font-size: clamp(3.45rem, 6.8vw, 7.4rem); line-height: .9; letter-spacing: -.065em; text-shadow: 0 .1em .7em #01060c80; }
+h1 em { color: var(--gold); font-style: italic; }
+.poem { max-width: 32ch; margin-block: 1.8rem; color: var(--muted); font: clamp(1rem, 1.25vw, 1.08rem)/1.68 Georgia, serif; }
+.poem p { margin: 0; }
+.poem p + p { margin-top: .12rem; }
+.poem p:last-child { margin-top: .85rem; color: #f3e2c9; }
+
+.primary-button { display: inline-flex; align-items: center; justify-content: center; min-height: 3.15rem; padding: .7rem 1.2rem; border: 1px solid #ffe0a9; border-radius: .18rem; color: #281c11; background: #e5c18b; font-weight: 750; transition: background-color 160ms ease, transform 160ms ease; }
+.primary-button:hover { background: #fae0b1; transform: translateY(-1px); }
+
+.arrangement { position: relative; width: min(100%, 36rem); max-height: 0; margin: 0 auto; overflow: hidden; filter: drop-shadow(0 1.8rem 2.2rem #020915a6); opacity: 0; pointer-events: none; transform: translateY(1.5rem) scale(.94); transition: max-height 1.1s cubic-bezier(.18,.85,.23,1), margin 1.1s ease, opacity 700ms ease 150ms, transform 1.1s cubic-bezier(.18,.85,.23,1), filter 900ms ease; }
+.arrangement::before { position: absolute; z-index: -1; inset: 20% 6% 0; border-radius: 50%; background: radial-gradient(ellipse, #9cc5de24, transparent 66%); content: ''; filter: blur(10px); }
+.arrangement svg { display: block; width: 100%; overflow: visible; }
+.arrangement figcaption { margin-top: -.3rem; color: #e7d7bf; font: italic .98rem/1.5 Georgia, serif; text-align: center; }
+.stem-set { isolation: isolate; }
+.stem-shadow { stroke: #193728; stroke-width: 10; opacity: .8; }
+.stem-body { stroke: url(#stem-body); stroke-width: 7; }
+.stem-glint { stroke: #9bb66d; stroke-width: 1.15; opacity: .72; }
+.rose-stems .stem-shadow { stroke-width: 11; }
+.rose-stems .stem-body { stroke-width: 8; }
+.calyx { fill: #496f3c; stroke: #254632; stroke-linejoin: round; stroke-width: 1.4; }
+.tulip-stems { display: none; }
+.letter[data-tulip='blancos'] .tulip-stems-white, .letter[data-tulip='azules'] .tulip-stems-blue, .letter[data-tulip='rosados'] .tulip-stems-pink { display: block; }
+.leaf { fill: url(#leaf-body); stroke: #294b35; stroke-width: 1.4; }
+.leaf-vein { fill: none; stroke: #b0c778; stroke-linecap: round; stroke-width: 1.2; opacity: .78; }
+.tulip-overlay { position: absolute; z-index: 1; top: 19%; left: 7%; width: 86%; opacity: 0; pointer-events: none; transform: translateY(.9rem) scale(.92); transform-origin: 50% 58%; transition: opacity 700ms ease 80ms, transform 900ms cubic-bezier(.18,.85,.23,1) 80ms; }
+.tulip-art { display: none; width: 100%; height: auto; }
+.letter[data-tulip='blancos'] .tulip-art-white, .letter[data-tulip='azules'] .tulip-art-blue, .letter[data-tulip='rosados'] .tulip-art-pink { display: block; }
+.letter.arrangement-revealed .tulip-overlay { opacity: 1; transform: translateY(0) scale(1); }
+.rose-overlay { position: absolute; z-index: 2; top: 1.5%; left: 16%; width: 69%; opacity: 0; pointer-events: none; transform: scale(.9); transform-origin: 50% 45%; transition: opacity 780ms ease 280ms, transform 1000ms cubic-bezier(.18,.85,.23,1) 180ms; }
+.rose-art { display: none; width: 100%; height: auto; }
+.letter[data-rose='rojas'] .rose-art-red, .letter[data-rose='blancas'] .rose-art-white, .letter[data-rose='rosas'] .rose-art-pink { display: block; }
+.letter.arrangement-revealed .rose-overlay { opacity: 1; transform: scale(1); }
+
+.footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.5rem; border-top: 1px solid var(--line); color: #d9d2c8; font-size: .82rem; }
+
+.second-poem { max-width: 29ch; max-height: 0; margin: 0 auto; overflow: hidden; color: #f3e5d1; font: italic 1rem/1.65 Georgia, serif; opacity: 0; text-align: center; transition: max-height 900ms ease, margin-top 900ms ease, opacity 650ms ease 240ms; }
+.second-poem p { margin: 0; }
+.second-poem p + p { margin-top: .1rem; }
+.second-poem p:last-child { margin-top: .65rem; color: var(--gold); }
+.letter.arrangement-revealed .second-poem { max-height: 18rem; margin-top: 1.45rem; opacity: 1; }
+.letter.arrangement-revealed .arrangement { max-height: 54rem; margin: auto; filter: drop-shadow(0 2.2rem 2.7rem #020915c7); opacity: 1; pointer-events: auto; transform: translateY(0) scale(1.05); }
+
+.petals { z-index: -1; margin: 0; padding: 0; list-style: none; overflow: hidden; }
+.petals li { position: absolute; width: .62rem; height: 1rem; border-radius: 75% 25% 75% 25%; background: var(--rose-light); box-shadow: inset -.14rem -.16rem .2rem var(--rose-shadow); opacity: .76; }
+.petals li:nth-child(1) { top: 12%; left: 6%; rotate: 53deg; }
+.petals li:nth-child(2) { top: 39%; left: 17%; scale: .7; rotate: 128deg; }
+.petals li:nth-child(3) { top: 22%; left: 31%; rotate: 36deg; }
+.petals li:nth-child(4) { top: 65%; left: 44%; scale: .8; rotate: 220deg; }
+.petals li:nth-child(5) { top: 8%; left: 56%; rotate: 18deg; }
+.petals li:nth-child(6) { top: 49%; left: 69%; scale: .7; rotate: 154deg; }
+.petals li:nth-child(7) { top: 27%; left: 77%; rotate: 88deg; }
+.petals li:nth-child(8) { top: 71%; left: 89%; scale: .8; rotate: 240deg; }
+.petals li:nth-child(9) { top: 54%; left: 25%; rotate: 176deg; }
+.petals li:nth-child(10) { top: 16%; left: 51%; scale: .6; rotate: 281deg; }
+.petals li:nth-child(11) { top: 80%; left: 65%; rotate: 81deg; }
+.petals li:nth-child(12) { top: 33%; left: 95%; scale: .6; rotate: 17deg; }
+
+.customizer { width: min(calc(100% - 2rem), 38rem); padding: 0; border: 1px solid #d8bf965c; border-radius: .5rem; color: #1e1b1a; background: #f7f0e4; box-shadow: 0 1.2rem 5rem #000b; }
+.customizer::backdrop { background: #020811d9; backdrop-filter: blur(5px); }
+.customizer-card { padding: clamp(1.3rem, 4vw, 2rem); }
+.customizer-heading { display: flex; align-items: start; justify-content: space-between; gap: 1rem; padding-bottom: 1.35rem; border-bottom: 1px solid #8b6d5533; }
+.customizer .eyebrow { margin-bottom: .55rem; color: #8e5d3e; }
+.customizer h2 { font-size: clamp(2.1rem, 6vw, 3rem); letter-spacing: -.045em; }
+.close { width: 2.5rem; height: 2.5rem; border: 1px solid #8b6d555c; border-radius: 50%; color: #513929; background: transparent; font-size: 1.5rem; line-height: 1; }
+.close:hover { background: #ead8bf; }
+fieldset { min-width: 0; margin: 1.4rem 0 0; padding: 0; border: 0; }
+legend { margin-bottom: .85rem; color: #513929; font: 1.24rem Georgia, serif; }
+.choice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.flower-choice { position: relative; display: grid; justify-items: center; gap: .52rem; min-height: 6.2rem; padding: .7rem .3rem; border: 1px solid #8b6d553b; border-radius: .3rem; color: #513929; font-size: .88rem; cursor: pointer; transition: border-color 150ms ease, background-color 150ms ease; }
+.flower-choice:hover { border-color: #9a624d; background: #fffaf1; }
+.flower-choice input { position: absolute; opacity: 0; }
+.flower-choice:has(input:checked) { border: 2px solid #9c5a46; background: #fceede; }
+.swatch { width: 2.6rem; height: 2.6rem; border: 1px solid #6c503c66; border-radius: 50% 50% 45% 45%; box-shadow: inset -.42rem -.42rem .5rem #0002; }
+.rose-red { background: #c5274d; }.rose-white { background: #eee1cd; }.rose-pink { background: #dc7393; }.tulip-white { background: #eee2cf; }.tulip-blue { background: #5489d7; }.tulip-pink { background: #e57fa6; }
+.customizer-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.8rem; padding-top: 1.25rem; border-top: 1px solid #8b6d5533; }
+.selection-status { max-width: 20ch; margin: 0; color: #6d5648; font: italic .92rem/1.4 Georgia, serif; }
+
+@keyframes river-breathe { from { transform: scale(1.02); } to { transform: scale(1.08); } }
+@keyframes arrangement-sway { from { transform: rotate(-1.1deg) translateY(2px); } to { transform: rotate(1.1deg) translateY(-2px); } }
+@keyframes flower-bob { from { transform: translateY(0) rotate(-1deg); } to { transform: translateY(-5px) rotate(1deg); } }
+@keyframes fall { from { translate: 0 -10vh; rotate: 0deg; } to { translate: 11vw 116vh; rotate: 480deg; } }
+
+@media (max-width: 48rem) {
+  .letter { min-height: 100svh; }
+  .river-cover { background-position: 58% center; }
+  .veil { background: linear-gradient(180deg, #06101ed5 0%, #071422a1 53%, #040a14dc 100%); }
+  .topbar { width: calc(100% - 2.5rem); min-height: 4.6rem; }
+  .quiet-button { display: inline-flex; flex: 0 0 auto; padding: .45rem .6rem; border: 1px solid #e5c18b8a; border-radius: .2rem; color: #ffe9c6; }
+  .quiet-button::after { display: none; }
+  .hero { grid-template-columns: 1fr; gap: .6rem; padding-block: 2rem 1.35rem; }
+  .letter-copy { max-width: 31rem; }
+  .poem { margin-block: 1rem 1.25rem; }
+  .arrangement { width: min(100%, 28rem); }
+  .arrangement figcaption { font-size: .88rem; }
+  .letter.arrangement-revealed .arrangement { max-height: 48rem; margin-block: -.7rem -1rem; transform: translateY(0) scale(1.02); }
+  .footer { min-height: 3.7rem; font-size: .72rem; }
+}
+
+@media (max-width: 25rem) {
+  :root { --edge: 1rem; }
+  .mark { font-size: 1rem; }
+  .mark-flower { width: 2rem; height: 2rem; }
+  .quiet-button { font-size: .83rem; }
+  .choice-grid { gap: .42rem; }
+  .flower-choice { min-height: 5.8rem; font-size: .78rem; }
+  .customizer-actions { align-items: flex-end; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

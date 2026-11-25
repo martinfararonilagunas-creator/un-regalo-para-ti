@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071422">
+  <meta name="description" content="Una carta nocturna junto al río para descubrirse con calma.">
+  <title>Al borde del río</title>
+  <link rel="preload" as="image" href="rio-nocturno.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="letter" id="carta" data-rose="rojas" data-tulip="blancos">
+    <div class="river-cover" aria-hidden="true"></div>
+    <div class="veil" aria-hidden="true"></div>
+    <ul class="petals" aria-hidden="true">
+      <li></li><li></li><li></li><li></li><li></li><li></li>
+      <li></li><li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <header class="topbar shell">
+      <a class="mark" href="#carta" aria-label="Al borde del río, inicio">
+        <span class="mark-flower" aria-hidden="true">✦</span>
+        Al borde del río
+      </a>
+    </header>
+
+    <section class="hero shell" aria-labelledby="titulo">
+      <div class="letter-copy">
+        <p class="eyebrow">Una carta que apenas comienza</p>
+        <h1 id="titulo">Quiero aprender<br><em>tu mundo</em></h1>
+        <div class="poem" aria-label="Poema">
+          <p>Apenas nos conocemos,</p>
+          <p>pero hay una calma en ti que quisiera explorar.</p>
+          <p>Quiero aprender tus silencios, tus risas y tus días,</p>
+          <p>quedarme un poco más de tiempo,</p>
+          <p>hasta que, si la vida lo permite, pueda enamorarme de ti.</p>
+        </div>
+        <button class="primary-button" type="button" data-open-customizer>
+          Elegir las flores
+        </button>
+      </div>
+
+      <figure class="arrangement" id="ramo" tabindex="-1" aria-label="Arreglo personalizable de rosas y tulipanes">
+        <svg viewBox="0 0 500 590" role="img" aria-labelledby="arrangement-title arrangement-description">
+          <title id="arrangement-title">Rosas y tulipanes para personalizar</title>
+          <desc id="arrangement-description">Un arreglo de tres rosas y cinco tulipanes sobre ramas y hojas.</desc>
+          <defs>
+            <linearGradient id="stem-body" x1="0" x2="1">
+              <stop stop-color="#254735" />
+              <stop offset=".52" stop-color="#5e8a4c" />
+              <stop offset="1" stop-color="#2f573d" />
+            </linearGradient>
+            <linearGradient id="leaf-body" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#7da657" />
+              <stop offset="1" stop-color="#315c3e" />
+            </linearGradient>
+          </defs>
+          <g class="stem-set rose-stems" fill="none" stroke-linecap="round">
+            <path class="stem-shadow" d="M250 552C234 447 204 371 183 318" />
+            <path class="stem-body" d="M250 552C234 447 204 371 183 318" />
+            <path class="stem-glint" d="M247 548C232 445 205 372 185 321" />
+            <path class="stem-shadow" d="M250 552C252 411 250 291 250 203" />
+            <path class="stem-body" d="M250 552C252 411 250 291 250 203" />
+            <path class="stem-glint" d="M248 548C250 408 248 290 248 207" />
+            <path class="stem-shadow" d="M250 552C285 440 315 370 336 329" />
+            <path class="stem-body" d="M250 552C285 440 315 370 336 329" />
+            <path class="stem-glint" d="M253 548C286 441 314 373 334 332" />
+          </g>
+          <g class="stem-set tulip-stems tulip-stems-white" fill="none" stroke-linecap="round">
+            <path class="stem-shadow" d="M250 552C231 440 203 337 190 273M250 552C274 430 319 339 345 286M250 552C247 499 245 447 244 405M250 552C234 533 215 513 196 500M250 552C273 531 296 515 317 504" />
+            <path class="stem-body" d="M250 552C231 440 203 337 190 273M250 552C274 430 319 339 345 286M250 552C247 499 245 447 244 405M250 552C234 533 215 513 196 500M250 552C273 531 296 515 317 504" />
+            <path class="stem-glint" d="M247 548C229 439 202 338 192 277M253 548C276 431 320 342 343 290M247 548C245 498 243 448 243 409M247 548C231 531 214 513 198 503M253 548C275 530 297 516 315 507" />
+            <path class="calyx" d="M190 273l-10 12 10-5 10 5-10-12ZM345 286l-10 12 10-5 10 5-10-12ZM244 405l-10 12 10-5 10 5-10-12ZM196 500l-9 11 9-5 9 5-9-11ZM317 504l-9 11 9-5 9 5-9-11Z" />
+          </g>
+          <g class="stem-set tulip-stems tulip-stems-blue" fill="none" stroke-linecap="round">
+            <path class="stem-shadow" d="M250 552C249 456 250 363 250 291M250 552C219 456 178 394 157 360M250 552C284 455 324 393 345 357M250 552C232 530 212 509 196 498M250 552C274 529 310 508 332 500" />
+            <path class="stem-body" d="M250 552C249 456 250 363 250 291M250 552C219 456 178 394 157 360M250 552C284 455 324 393 345 357M250 552C232 530 212 509 196 498M250 552C274 529 310 508 332 500" />
+            <path class="stem-glint" d="M247 548C246 456 247 365 248 295M247 548C217 456 177 396 159 364M253 548C286 456 325 395 343 361M247 548C230 529 211 509 198 502M253 548C276 529 310 510 330 503" />
+            <path class="calyx" d="M250 291l-11 12 11-5 11 5-11-12ZM157 360l-10 12 10-5 10 5-10-12ZM345 357l-10 12 10-5 10 5-10-12ZM196 498l-9 11 9-5 9 5-9-11ZM332 500l-9 11 9-5 9 5-9-11Z" />
+          </g>
+          <g class="stem-set tulip-stems tulip-stems-pink" fill="none" stroke-linecap="round">
+            <path class="stem-shadow" d="M250 552C250 461 250 372 250 303M250 552C218 475 177 419 157 388M250 552C290 469 348 417 372 388M250 552C242 541 233 530 228 524M250 552C282 532 327 515 354 512" />
+            <path class="stem-body" d="M250 552C250 461 250 372 250 303M250 552C218 475 177 419 157 388M250 552C290 469 348 417 372 388M250 552C242 541 233 530 228 524M250 552C282 532 327 515 354 512" />
+            <path class="stem-glint" d="M247 548C247 461 247 374 248 307M247 548C216 475 176 421 159 392M253 548C292 470 349 420 370 392M247 548C240 540 232 531 230 527M253 548C284 533 328 518 352 515" />
+            <path class="calyx" d="M250 303l-11 12 11-5 11 5-11-12ZM157 388l-10 12 10-5 10 5-10-12ZM372 388l-10 12 10-5 10 5-10-12ZM228 524l-9 11 9-5 9 5-9-11ZM354 512l-9 11 9-5 9 5-9-11Z" />
+          </g>
+          <g class="leaves">
+            <path class="leaf" d="M215 474C175 438 135 448 114 473c39 26 76 24 101 1Z" />
+            <path class="leaf-vein" d="M215 474c-33-6-63-7-90-2" />
+            <path class="leaf" d="M283 470c36-39 76-37 103-11-37 28-73 28-103 11Z" />
+            <path class="leaf-vein" d="M283 470c30-9 60-11 91-9" />
+            <path class="leaf" d="M223 407c-39-30-70-21-90 6 37 19 67 15 90-6Z" />
+            <path class="leaf-vein" d="M223 407c-27-5-52-2-77 7" />
+            <path class="leaf" d="M280 405c34-31 66-23 88 2-33 20-63 17-88-2Z" />
+            <path class="leaf-vein" d="M280 405c27-4 52-1 75 7" />
+          </g>
+        </svg>
+        <div class="tulip-overlay" aria-hidden="true">
+          <img class="tulip-art tulip-art-white" src="tulipanes-blancos-web.png" alt="" width="720" height="720">
+          <img class="tulip-art tulip-art-blue" src="tulipanes-azules-web.png" alt="" width="720" height="720">
+          <img class="tulip-art tulip-art-pink" src="tulipanes-rosados-web.png" alt="" width="720" height="720">
+        </div>
+        <div class="rose-overlay" aria-hidden="true">
+          <img class="rose-art rose-art-red" src="rosas-rojas-web.png" alt="" width="720" height="720">
+          <img class="rose-art rose-art-white" src="rosas-blancas-web.png" alt="" width="720" height="720">
+          <img class="rose-art rose-art-pink" src="rosas-rosas-web.png" alt="" width="720" height="720">
+        </div>
+        <figcaption>Un arreglo elegido para esta conversación.</figcaption>
+        <div class="second-poem" aria-live="polite">
+          <p>Y si mañana vuelvo a encontrarte,</p>
+          <p>quisiera saber qué canción te acompaña,</p>
+          <p>qué rincón del mundo te hace sonreír.</p>
+          <p>No quiero apresurar el cariño,</p>
+          <p>solo aprender tu nombre en cada cosa que decidas contarme.</p>
+        </div>
+      </figure>
+    </section>
+
+    <footer class="footer shell">
+      <span>Una noche, un río, la posibilidad de conocernos.</span>
+    </footer>
+  </main>
+
+  <dialog class="customizer" id="personalizador" aria-labelledby="personalizador-titulo">
+    <form method="dialog" class="customizer-card">
+      <div class="customizer-heading">
+        <div>
+          <p class="eyebrow">Elige el arreglo</p>
+          <h2 id="personalizador-titulo">Hazlo tuyo</h2>
+        </div>
+        <button class="close" type="submit" aria-label="Cerrar personalizador">×</button>
+      </div>
+
+      <fieldset>
+        <legend>Color de las rosas</legend>
+        <div class="choice-grid" role="radiogroup" aria-label="Color de las rosas">
+          <label class="flower-choice"><input type="radio" name="roses" value="rojas" checked><span class="swatch rose-red"></span>Rojas</label>
+          <label class="flower-choice"><input type="radio" name="roses" value="blancas"><span class="swatch rose-white"></span>Blancas</label>
+          <label class="flower-choice"><input type="radio" name="roses" value="rosas"><span class="swatch rose-pink"></span>Rosas</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Color de los tulipanes</legend>
+        <div class="choice-grid" role="radiogroup" aria-label="Color de los tulipanes">
+          <label class="flower-choice"><input type="radio" name="tulips" value="blancos" checked><span class="swatch tulip-white"></span>Blancos</label>
+          <label class="flower-choice"><input type="radio" name="tulips" value="azules"><span class="swatch tulip-blue"></span>Azules</label>
+          <label class="flower-choice"><input type="radio" name="tulips" value="rosados"><span class="swatch tulip-pink"></span>Rosados</label>
+        </div>
+      </fieldset>
+
+      <div class="customizer-actions">
+        <p class="selection-status" id="estado" aria-live="polite">Rosas rojas y tulipanes blancos.</p>
+        <button class="primary-button" type="submit" data-confirm-arrangement>Ver mi arreglo</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
